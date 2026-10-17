@@ -1,0 +1,56 @@
+[project]
+name = "nova-backend"
+version = "0.1.0"
+description = "Nova AI Assistant — FastAPI Backend with LangGraph Orchestrator"
+requires-python = ">=3.11"
+dependencies = [
+    # ── Web Framework ──
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "python-multipart>=0.0.9",
+    "sse-starlette>=2.1.0",
+
+    # ── LLM & Orchestration ──
+    "langchain-anthropic>=0.3.0",
+    "langgraph>=0.2.60",
+    "langchain-core>=0.3.0",
+    "langchain-openai>=0.2.0",
+
+    # ── Database ──
+    "sqlalchemy[asyncio]>=2.0.30",
+    "asyncpg>=0.29.0",
+    "psycopg[binary]>=3.2.0",
+    "pgvector>=0.3.0",
+
+    # ── Tools ──
+    "httpx>=0.27.0",
+    "beautifulsoup4>=4.12.0",
+    "playwright>=1.45.0",
+    "tavily-python>=0.5.0",
+    "spotipy>=2.24.0",
+    "google-api-python-client>=2.140.0",
+    "docker>=7.1.0",
+
+    # ── Voice ──
+    "openai>=1.40.0",
+    "elevenlabs>=1.5.0",
+
+    # ── Config & Utils ──
+    "pydantic>=2.8.0",
+    "pydantic-settings>=2.4.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.5.0",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

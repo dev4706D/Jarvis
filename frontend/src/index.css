@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════
+   Nova Minimalist AI GUI — Premium Aesthetic Design System
+   ═══════════════════════════════════════════════════════════════ */
+
+@theme {
+  --color-nova-bg: #09090e;
+  --color-nova-surface: #101018;
+  --color-nova-surface-2: #181824;
+  --color-nova-surface-3: #222232;
+  --color-nova-border: rgba(255, 255, 255, 0.08);
+  --color-nova-border-light: rgba(255, 255, 255, 0.15);
+  --color-nova-text: #f1f1f8;
+  --color-nova-text-secondary: #9da0b5;
+  --color-nova-text-muted: #5d6077;
+  --color-nova-accent: #7c5cfc;
+  --color-nova-accent-light: #a78bfa;
+  --color-nova-cyan: #38bdf8;
+  --color-nova-emerald: #34d399;
+  --color-nova-success: #34d399;
+  --color-nova-warning: #fbbf24;
+  --color-nova-error: #f87171;
+}
+
+/* ── Global Reset ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--color-nova-bg);
+  color: var(--color-nova-text);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Clean, deep cosmic gradient without harsh grid lines */
+.aesthetic-bg {
+  background-color: #08080d;
+  background-image: 
+    radial-gradient(circle at 50% 35%, rgba(124, 92, 252, 0.15) 0%, transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+}
+
+/* ── Minimalist Scrollbar ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Glassmorphic Utilities ── */
+.glass-panel {
+  background: rgba(18, 18, 28, 0.65);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* ── Glows ── */
+.glow-subtle {
+  box-shadow: 0 0 40px -10px rgba(124, 92, 252, 0.3);
+}
+
+.glow-cyan-subtle {
+  box-shadow: 0 0 40px -10px rgba(56, 189, 248, 0.35);
+}
+
+.glow-emerald-subtle {
+  box-shadow: 0 0 40px -10px rgba(52, 211, 153, 0.35);
+}
+
+/* ── Animations ── */
+@keyframes breathing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+}
+
+.animate-breathing {
+  animation: breathing 4s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 3s ease-in-out infinite;
+}
